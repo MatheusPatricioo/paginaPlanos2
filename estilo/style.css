@@ -127,8 +127,8 @@ body {
 }
 
 .pricing-plan__cta:hover {
-    outline: 2px solid #cbe300;
-    background-color: transparent;
+    outline: 2px solid #000000;
+    background-color: #ffcc00;;
     color: white;
 }
 
