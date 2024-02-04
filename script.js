@@ -1,37 +1,42 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Função para criar o fundo espacial animado
     function createSpaceBackground() {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
+        const canvas = document.createElement('canvas'); // Cria um elemento canvas
+        const ctx = canvas.getContext('2d'); // Obtém o contexto 2D do canvas
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth; // Define a largura do canvas como a largura da janela
+        canvas.height = window.innerHeight; // Define a altura do canvas como a altura da janela
 
-        const stars = [];
+        const stars = []; // Array para armazenar as estrelas
         const comets = []; // Array para armazenar os cometas
 
+        // Loop para criar estrelas
         for (let i = 0; i < 100; i++) {
             stars.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                radius: Math.random() * 2,
-                alpha: Math.random() * 0.5 + 0.5,
-                glowing: Math.random() > 0.5
+                x: Math.random() * canvas.width, // Posição X aleatória
+                y: Math.random() * canvas.height, // Posição Y aleatória
+                radius: Math.random() * 2, // Raio aleatório
+                alpha: Math.random() * 0.5 + 0.5, // Transparência aleatória
+                glowing: Math.random() > 0.5 // Brilho aleatório
             });
         }
 
-        for (let i = 0; i < 5; i++) { // Criando 5 cometas
+        // Loop para criar cometas
+        for (let i = 0; i < 5; i++) {
             comets.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                speed: Math.random() * 2 + 1, // Velocidade do cometa
-                length: Math.random() * 30 + 10, // Comprimento do cometa
-                angle: Math.random() * Math.PI * 2 // Ângulo de movimento do cometa
+                x: Math.random() * canvas.width, // Posição X aleatória
+                y: Math.random() * canvas.height, // Posição Y aleatória
+                speed: Math.random() * 2 + 1, // Velocidade aleatória do cometa
+                length: Math.random() * 30 + 10, // Comprimento aleatório do cometa
+                angle: Math.random() * Math.PI * 2 // Ângulo aleatório de movimento do cometa
             });
         }
 
+        // Função para desenhar o fundo espacial
         function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpa o canvas
 
+            // Desenha estrelas
             for (let i = 0; i < stars.length; i++) {
                 const star = stars[i];
 
@@ -53,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            // Desenhar cometas
+            // Desenha cometas
             for (let i = 0; i < comets.length; i++) {
                 const comet = comets[i];
                 ctx.beginPath();
@@ -63,11 +68,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 ctx.lineWidth = 1;
                 ctx.stroke();
 
-                // Atualizar posição do cometa
+                // Atualiza a posição do cometa
                 comet.x -= Math.cos(comet.angle) * comet.speed;
                 comet.y -= Math.sin(comet.angle) * comet.speed;
 
-                // Reposicionar cometa quando sair da tela
+                // Reposiciona o cometa quando sair do canvas
                 if (comet.x < -comet.length || comet.y < -comet.length || comet.x > canvas.width + comet.length || comet.y > canvas.height + comet.length) {
                     comet.x = Math.random() * canvas.width;
                     comet.y = Math.random() * canvas.height;
@@ -75,13 +80,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            requestAnimationFrame(draw);
+            requestAnimationFrame(draw); // Solicita uma nova animação
         }
 
-        draw();
+        draw(); // Chama a função para iniciar a animação
 
-        document.body.appendChild(canvas);
+        document.body.appendChild(canvas); // Adiciona o canvas ao corpo do documento
     }
 
-    createSpaceBackground();
+    createSpaceBackground(); // Chama a função para criar o fundo espacial
 });

@@ -1,148 +1,168 @@
+/* Define as configurações gerais do corpo do documento */
 body {
-    background-color: #0c1014;
-    color: white;
-    width: 90%;
-    max-width: 960px;
-    margin: 0 auto;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #0c1014; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    width: 90%; /* Largura */
+    max-width: 960px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza o conteúdo na página */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Fonte */
     padding-bottom: 60px; /* Adiciona espaço para o footer */
 }
 
+/* Estilo do título principal */
 .main-title {
-    font-size: 62px;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 46px 0;
-    position: relative;
-    z-index: 1;
+    font-size: 62px; /* Tamanho da fonte */
+    text-transform: uppercase; /* Transforma o texto em maiúsculo */
+    text-align: center; /* Alinhamento do texto */
+    margin: 46px 0; /* Margens */
+    position: relative; /* Posição */
+    z-index: 1; /* Ordem z para sobreposição */
 }
 
+/* Linha abaixo do título principal */
 .main-title::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 100%;
-    height: 2px;
-    background-color: #ffcc00;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+    content: ""; /* Conteúdo vazio */
+    position: absolute; /* Posição absoluta */
+    left: 0; /* Alinhamento à esquerda */
+    bottom: -10px; /* Distância do fundo */
+    width: 100%; /* Largura */
+    height: 2px; /* Altura */
+    background-color: #ffcc00; /* Cor da linha */
+    transform: scaleX(0); /* Escala inicial */
+    transition: transform 0.3s ease; /* Transição */
 }
 
+/* Animação da linha abaixo do título principal ao passar o mouse */
 .main-title:hover::after {
-    transform: scaleX(1);
+    transform: scaleX(1); /* Escala ao passar o mouse */
 }
 
+/* Estilo do cabeçalho */
 .header {
-    display: flex;
-    background-color: #1f262c;
-    padding: 16px;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Flexbox */
+    background-color: #1f262c; /* Cor de fundo */
+    padding: 16px; /* Preenchimento */
+    justify-content: space-between; /* Alinhamento */
+    align-items: center; /* Alinhamento */
 }
 
+/* Estilo do logotipo no cabeçalho */
 .header__logo {
-    font-size: 36px;
-    text-transform: uppercase;
-    margin-left: 16px;
-    letter-spacing: 2px;
-    color: #cbe300;
+    font-size: 36px; /* Tamanho da fonte */
+    text-transform: uppercase; /* Transforma o texto em maiúsculo */
+    margin-left: 16px; /* Margem à esquerda */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    color: #cbe300; /* Cor do texto */
 }
 
+/* Estilo da navegação no cabeçalho */
 .header__nav ul {
-    display: flex;
-    list-style-type: none;
-    font-size: 18px;
-    gap: 16px;
+    display: flex; /* Flexbox */
+    list-style-type: none; /* Estilo da lista */
+    font-size: 18px; /* Tamanho da fonte */
+    gap: 16px; /* Espaçamento entre itens */
 }
 
+/* Estilo dos links da navegação no cabeçalho */
 .header__nav a {
-    color: white;
-    text-decoration: none;
-    padding: 14px;
-    border-radius: 6px;
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    padding: 14px; /* Preenchimento */
+    border-radius: 6px; /* Raio da borda */
 }
 
+/* Animação dos links da navegação no cabeçalho ao passar o mouse */
 .header__nav a:hover {
-    background-color: #ffcc00;
-    color: #0c1014;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #ffcc00; /* Cor de fundo ao passar o mouse */
+    color: #0c1014; /* Cor do texto ao passar o mouse */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição */
 }
 
+/* Estilo dos planos de preços */
 .pricing {
-    display: flex;
-    gap: 16px;
+    display: flex; /* Flexbox */
+    gap: 16px; /* Espaçamento entre itens */
 }
 
+/* Estilo de cada plano de preço */
 .pricing-plan {
-    flex: 1;
-    background-color: #1f262c;
-    padding: 30px;
-    border-radius: 6px;
-    box-shadow: 0 5px 15px -6px black;
-    display: flex;
-    flex-direction: column;
+    flex: 1; /* Cresce para ocupar o espaço disponível */
+    background-color: #1f262c; /* Cor de fundo */
+    padding: 30px; /* Preenchimento */
+    border-radius: 6px; /* Raio da borda */
+    box-shadow: 0 5px 15px -6px black; /* Sombra */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Direção do flexbox */
 }
 
+/* Estilo do título de cada plano */
 .class-plan__title {
-    text-transform: uppercase;
-    border-bottom: 2px solid #cbe300;
-    margin-top: 0;
-    padding-bottom: 10px;
-    letter-spacing: 2px;
-    color: #cbe300;
+    text-transform: uppercase; /* Transforma o texto em maiúsculo */
+    border-bottom: 2px solid #cbe300; /* Borda inferior */
+    margin-top: 0; /* Margem superior */
+    padding-bottom: 10px; /* Preenchimento inferior */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    color: #cbe300; /* Cor do texto */
 }
 
+/* Estilo do parágrafo dentro de cada plano */
 .pricing-plan p {
-    margin-top: 0;
+    margin-top: 0; /* Margem superior */
 }
 
+/* Estilo do preço de cada plano */
 .pricing-plan__price {
-    font-size: 34px;
-    color: #cbe300;
+    font-size: 34px; /* Tamanho da fonte */
+    color: #cbe300; /* Cor do texto */
 }
 
+/* Estilo das características de cada plano */
 .pricing-plan__features {
-    margin: 0 0 35px;
-    color: #b5b5b5;
-    padding-left: 16px;
-    line-height: 1.8;
-    flex: 1;
+    margin: 0 0 35px; /* Margem */
+    color: #b5b5b5; /* Cor do texto */
+    padding-left: 16px; /* Preenchimento à esquerda */
+    line-height: 1.8; /* Altura da linha */
+    flex: 1; /* Cresce para ocupar o espaço disponível */
 }
 
+/* Estilo do marcador das características de cada plano */
 .pricing-plan__features li::marker {
-    color: #cbe300;
+    color: #cbe300; /* Cor do marcador */
 }
 
+/* Estilo do botão de chamada para ação (Call to Action - CTA) de cada plano */
 .pricing-plan__cta {
-    text-decoration: none;
-    color: #0c1014;
-    background-color: #cbe300;
-    border-radius: 6px;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 16px 10px;
-    text-align: center;
+    text-decoration: none; /* Sem decoração de texto */
+    color: #0c1014; /* Cor do texto */
+    background-color: #cbe300; /* Cor de fundo */
+    border-radius: 6px; /* Raio da borda */
+    text-transform: uppercase; /* Transforma o texto em maiúsculo */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    padding: 16px 10px; /* Preenchimento */
+    text-align: center; /* Alinhamento do texto */
 }
 
+/* Animação do botão de chamada para ação (CTA) ao passar o mouse */
 .pricing-plan__cta:hover {
-    outline: 2px solid #000000;
-    background-color: #ffcc00;;
-    color: white;
+    outline: 2px solid #000000; /* Contorno */
+    background-color: #ffcc00;; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
 }
 
+/* Estilo do rodapé */
 .footer {
-    background-color: #1f262c;
-    color: #cbe300;
-    padding: 20px 0;
-    text-align: center;
-    position: fixed; /* Fixa o footer na parte inferior */
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    background-color: #1f262c; /* Cor de fundo */
+    color: #cbe300; /* Cor do texto */
+    padding: 20px 0; /* Preenchimento */
+    text-align: center; /* Alinhamento do texto */
+    position: fixed; /* Posição fixa */
+    left: 0; /* Alinhamento à esquerda */
+    bottom: 0; /* Alinhamento ao fundo */
+    width: 100%; /* Largura */
 }
 
+/* Estilo do conteúdo dentro do rodapé */
 .footer__content p {
-    margin: 0;
+    margin: 0; /* Margem */
 }
